@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Téléchargeur YouTube</title>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="border">
+    <h1 class="text-3xl font-bold mb-6 text-center">Téléchargeur YouTube</h1>
+    <form action="{{ url_for('download') }}" method="post" class="max-w-lg mx-auto">
+        <div class="mb-4">
+            <label for="url" class="block text-gray-700">Entrez l'URL de la vidéo ou de la playlist YouTube :</label>
+            <input type="text" id="url" name="url" required class="mt-1 p-2 border border-gray-300 rounded-md w-full focus:outline-none focus:ring focus:border-blue-300">
+        </div>
+        <div class="text-center">
+            <input type="submit" value="Télécharger" class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:bg-blue-600">
+        </div>
+    </form>
+</div>
+</body>
+
+</html>
