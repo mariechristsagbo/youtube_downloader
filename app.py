@@ -10,7 +10,7 @@ def index():
 @app.route('/download', methods=['POST'])
 def download():
     url = request.form['url']
-    if 'youtube.com/playlist' in url:
+    if 'index' in url:
         try:
             playlist = Playlist(url)
             for video in playlist.videos:
