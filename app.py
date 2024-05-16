@@ -12,8 +12,7 @@ def get_download_path():
         download_path = home_directory / dir_name
         if download_path.exists() and download_path.is_dir():
             return download_path
-
-    # Si aucun des dossiers n'existe, renvoie simplement le dossier de l'utilisateur
+        
     return home_directory / "Downloads"
 
 
@@ -26,7 +25,7 @@ def index():
 @app.route('/download', methods=['POST'])
 def download():
     url = request.form['url']
-    home_directory = Path.home() / "Downloads"
+    home_directory = get_download_path()
     pattern = r'list=([a-zA-Z0-9_-]+)'
     match = re.search(pattern, url)
 
