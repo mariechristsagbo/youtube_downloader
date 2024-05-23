@@ -6,10 +6,17 @@
     <title>Téléchargement</title>
 </head>
 <body>
+    <h1>Télécharger une vidéo ou une playlist YouTube</h1>
+    <form action="{{ url_for('download') }}" method="post">
+        <label for="url">URL de la vidéo ou de la playlist :</label>
+        <input type="text" id="url" name="url" required>
+        <button type="submit">Télécharger</button>
+    </form>
+    
     {% if download_links %}
     <h1>Téléchargement de la playlist</h1>
     <ul>
-        {% for link in download_link %}
+        {% for link in download_links %}
         <li><a href="{{ link }}" download>Télécharger</a></li>
         {% endfor %}
     </ul>
